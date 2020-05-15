@@ -1,0 +1,9 @@
+bases:
+- bases/install.yaml
+
+resources:
+- resources/ingress.yaml
+- resources/namespace.yaml
+
+patchesStrategicMerge:
+- overlays/argocd-cm.yaml
