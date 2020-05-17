@@ -6,10 +6,13 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     kubernetes.io/ingress.class: nginx
-    kubernetes.io/tls-acme: "true"
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
+  tls:
+  - hosts:
+    - argocd.kubes-ci.com
+    secretName: argocd-secret
   rules:
   - host: argocd.kubes-ci.com
     http:
@@ -18,7 +21,3 @@ spec:
           serviceName: argocd-server
           servicePort: https
         path: /
-  tls:
-  - hosts:
-    - argocd.kubes-ci.com
-    secretName: argocd-secret

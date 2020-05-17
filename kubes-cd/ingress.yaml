@@ -6,11 +6,10 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "nginx"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    kubernetes.io/tls-acme: "true"
 spec:
   tls:
   - hosts:
-    - kubes-ci.com
+    - ci.kubes-ci.com
     secretName: kubes-ci-tls
   rules:
   - host: ci.kubes-ci.com
