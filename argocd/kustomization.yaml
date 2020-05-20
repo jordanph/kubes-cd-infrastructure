@@ -4,6 +4,7 @@ resources:
 - resources/namespace.yaml
 - resources/install.yaml
 - resources/ingress.yaml
+- applications/argocd-application.yaml
 
 patchesStrategicMerge:
 - overlays/argocd-cm.yaml
