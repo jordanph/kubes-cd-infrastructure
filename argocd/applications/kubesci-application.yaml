@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kubesci
+  namespace: kubesci
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/jordanph/test-hook-repo.git
+    targetRevision: HEAD
+    path: deployment
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kubesci
+  syncPolicy:
+    automated:
+      selfHeal: true

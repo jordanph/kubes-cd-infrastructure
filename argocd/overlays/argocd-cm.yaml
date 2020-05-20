@@ -15,6 +15,7 @@ data:
   # Repositories that argocd has access to
   repositories: |
     - url: https://github.com/jordanph/kubes-cd-infrastructure.git
+    - url: https://github.com/jordanph/test-hook-repo.git
 
   # A dex connector configuration (optional). See SSO configuration documentation:
   # https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/sso
